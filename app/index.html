@@ -6,7 +6,26 @@
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="OminiPay — a multi-currency digital wallet and payments platform in development.">
   <meta name="theme-color" content="#0F0E0D">
-  <style>html, body { background: #0F0E0D; }</style>
+  <style>
+    html, body { background: #0F0E0D; margin: 0; min-height: 100%; }
+    #ominipay-web-splash {
+      position: fixed; inset: 0; z-index: 99999;
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 18px;
+      background: #0F0E0D; color: #F4F1EC;
+      font-family: Arial, sans-serif;
+    }
+    #ominipay-web-splash img { width: 104px; height: 104px; object-fit: contain; }
+    #ominipay-web-splash strong { font-size: 26px; letter-spacing: -.6px; }
+    #ominipay-web-splash span { color: #E8B437; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; }
+    #ominipay-web-splash .loader {
+      width: 26px; height: 26px; margin-top: 10px;
+      border: 3px solid rgba(232,180,55,.22);
+      border-top-color: #E8B437; border-radius: 50%;
+      animation: ominipay-spin .8s linear infinite;
+    }
+    @keyframes ominipay-spin { to { transform: rotate(360deg); } }
+  </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -17,6 +36,18 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <div id="ominipay-web-splash" role="status" aria-label="Loading OminiPay">
+    <img src="assets/assets/images/ominipay_launcher_icon.png" alt="OminiPay logo">
+    <strong>OminiPay</strong>
+    <span>YOUR MONEY. ACROSS BORDERS.</span>
+    <div class="loader" aria-hidden="true"></div>
+  </div>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var splash = document.getElementById('ominipay-web-splash');
+      if (splash) splash.remove();
+    });
+  </script>
   <script src="https://github.com/corbado/flutter-passkeys/releases/download/2.4.0/bundle.js" type="application/javascript"></script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
