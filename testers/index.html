@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101010">
+<meta name="description" content="Apply to test OminiPay or send feedback to the OminiPay testing team.">
+<title>OminiPay — Tester Portal</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0b0b;--surface:#151515;--surface2:#1c1a16;--line:#393126;--gold:#d8ad52;--gold2:#f0d28a;--text:#f7f4ed;--muted:#aaa49a;--danger:#ff9b91;--success:#b9e6c7}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -18%,#4b391b 0,transparent 46%),linear-gradient(180deg,#111 0%,var(--bg) 70%);color:var(--text);font:15px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{width:min(1040px,calc(100% - 36px));margin:auto}
+header{padding:25px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff12}
+.brand{display:flex;align-items:center;gap:12px;font-size:21px;font-weight:850}
+.mark{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(145deg,#f3d58f,#b9862e);color:#17130b;font-size:24px;font-weight:950}
+.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:650}
+.header-link{color:var(--gold2);text-decoration:none;font-size:13px}
+main{padding:54px 0 72px}
+.hero{text-align:center;max-width:720px;margin:0 auto 34px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--gold2);border:1px solid #8e713c70;background:#d8ad5212;padding:7px 13px;border-radius:99px;font-size:11px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px #d8ad52}
+h1{font-size:clamp(38px,7vw,62px);line-height:1.06;letter-spacing:-2.5px;margin:20px 0 13px}
+h1 span{color:var(--gold2)}
+.hero p{max-width:620px;margin:0 auto;color:var(--muted);font-size:17px}
+.tabs{display:flex;gap:10px;justify-content:center;margin:30px auto 20px}
+.tab{border:1px solid var(--line);background:#151515;color:var(--muted);padding:11px 19px;border-radius:11px;font-weight:750;cursor:pointer}
+.tab[aria-selected=true]{background:linear-gradient(110deg,#f0d28a,#c4933e);color:#17130b;border-color:transparent}
+.grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(260px,.75fr);gap:18px;align-items:start}
+.panel{background:linear-gradient(145deg,#1c1a16,#131313);border:1px solid var(--line);border-radius:18px;padding:25px}
+.panel h2{font-size:20px;margin:0 0 5px}
+.panel .lead{color:var(--muted);font-size:13px;margin:0 0 20px}
+form{display:grid;gap:14px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+label{display:block;font-size:12px;color:#d9d1c3;font-weight:700;margin-bottom:6px}
+input,select,textarea{width:100%;border:1px solid #40392d;border-radius:10px;background:#0d0d0d;color:var(--text);padding:12px 13px;font:inherit;font-size:14px;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px #d8ad521c}
+textarea{min-height:116px;resize:vertical}
+.hint{font-size:11px;color:#8e887f;margin-top:5px}
+.check{display:flex;gap:10px;align-items:flex-start;color:#c9c1b4;font-size:12px}
+.check input{width:16px;height:16px;margin:2px 0 0;accent-color:var(--gold);flex:none}
+.submit{border:0;border-radius:11px;padding:14px 18px;background:linear-gradient(110deg,#f0d28a,#c4933e);color:#17130b;font-weight:900;font-size:14px;cursor:pointer}
+.submit:disabled{opacity:.55;cursor:wait}
+.status{min-height:22px;font-size:13px;color:var(--success);margin:0}
+.status.error{color:var(--danger)}
+.side h3{font-size:15px;margin:0 0 8px;color:var(--gold2)}
+.side p,.side li{color:var(--muted);font-size:13px}
+.side ul{padding-left:18px;margin:8px 0 20px}
+.side li{margin:7px 0}
+.notice{padding:14px 15px;border-left:3px solid var(--gold);background:#d8ad520d;border-radius:0 10px 10px 0;color:#d8d0c0;font-size:12px;margin-top:18px}
+.links{display:flex;gap:17px;flex-wrap:wrap;margin-top:20px}
+.links a{color:var(--gold2);font-size:12px;text-decoration:none}
+.hidden{display:none!important}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+footer{border-top:1px solid #ffffff12;padding:22px 0 32px;color:#777168;text-align:center;font-size:12px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.side{order:2}.fields{grid-template-columns:1fr}main{padding-top:38px}.panel{padding:19px}h1{letter-spacing:-1.5px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand"><div class="mark" aria-hidden="true">O</div><div>OminiPay<small>Simple. Connected. Yours.</small></div></div>
+  <a class="header-link" href="https://ominicodes.github.io/OminiPay-Downloads/">Download app ↗</a>
+</header>
+<main>
+  <section class="hero">
+    <div class="eyebrow"><span class="dot"></span> Official tester portal</div>
+    <h1>Help us make OminiPay <span>better.</span></h1>
+    <p>Apply to join the tester group or send feedback about your testing experience. You do not need access to our private GitHub repository.</p>
+    <div class="tabs" role="tablist" aria-label="Tester portal forms">
+      <button class="tab" id="applyTab" type="button" role="tab" aria-selected="true" aria-controls="applyPanel">Apply to test</button>
+      <button class="tab" id="feedbackTab" type="button" role="tab" aria-selected="false" aria-controls="feedbackPanel">Send feedback</button>
+    </div>
+  </section>
+
+  <div class="grid">
+    <section class="panel" id="applyPanel" role="tabpanel" aria-labelledby="applyTab">
+      <h2>Tester application</h2>
+      <p class="lead">Tell the team how to reach you and which device you can test on. Applications are reviewed; submitting does not automatically create an OminiPay account.</p>
+      <form id="applicationForm">
+        <div class="fields">
+          <div><label for="appName">Full name *</label><input id="appName" name="full_name" maxlength="80" autocomplete="name" required></div>
+          <div><label for="appEmail">Email address *</label><input id="appEmail" name="email" type="email" maxlength="254" autocomplete="email" required></div>
+          <div><label for="appCountry">Country</label><input id="appCountry" name="country" maxlength="80" autocomplete="country-name" placeholder="e.g. Nigeria"></div>
+          <div><label for="appPlatform">Testing platform *</label><select id="appPlatform" name="platform" required><option value="">Select platform</option><option>Android</option><option>iOS</option><option>Web</option></select></div>
+          <div><label for="appDevice">Device / browser</label><input id="appDevice" name="device" maxlength="120" placeholder="e.g. Samsung A54, Chrome"></div>
+          <div><label for="appVersion">App version (if installed)</label><input id="appVersion" name="app_version" maxlength="40" placeholder="e.g. 1.0.2"></div>
+        </div>
+        <div><label for="appDetails">What would you like to help test? *</label><textarea id="appDetails" name="details" minlength="8" maxlength="3000" required placeholder="Tell us briefly about your device, availability, or areas you are interested in testing."></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="appWebsite">Leave this field empty</label><input id="appWebsite" name="website" tabindex="-1" autocomplete="off"></div>
+        <label class="check"><input type="checkbox" name="consent" required><span>I agree that OminiPay may use the details I submit to review my tester application and contact me about testing.</span></label>
+        <button class="submit" type="submit">Submit tester application</button>
+        <p class="status" id="appStatus" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="panel hidden" id="feedbackPanel" role="tabpanel" aria-labelledby="feedbackTab" hidden>
+      <h2>Tester feedback</h2>
+      <p class="lead">Report a bug or tell us what worked well. Please do not include passwords, PINs, OTPs, bank/card details or private verification links.</p>
+      <form id="feedbackForm">
+        <div class="fields">
+          <div><label for="feedbackEmail">Email (optional)</label><input id="feedbackEmail" name="email" type="email" maxlength="254" autocomplete="email" placeholder="If you want us to follow up"></div>
+          <div><label for="feedbackPlatform">Platform</label><select id="feedbackPlatform" name="platform"><option value="">Select platform</option><option>Android</option><option>iOS</option><option>Web</option></select></div>
+          <div><label for="feedbackDevice">Device / browser</label><input id="feedbackDevice" name="device" maxlength="120" placeholder="e.g. iPhone 15, Safari"></div>
+          <div><label for="feedbackVersion">App version</label><input id="feedbackVersion" name="app_version" maxlength="40" placeholder="e.g. 1.0.2"></div>
+        </div>
+        <div><label for="feedbackCategory">Feedback area *</label><select id="feedbackCategory" name="category" required><option value="">Choose an area</option><option>Registration and verification</option><option>Login and account access</option><option>Wallet and currency</option><option>Balance visibility</option><option>Demo funding</option><option>Transfers and history</option><option>Profile and navigation</option><option>Performance or crash</option><option>Suggestion / general feedback</option></select></div>
+        <div><label for="feedbackDetails">What happened? *</label><textarea id="feedbackDetails" name="details" minlength="8" maxlength="3000" required placeholder="Include steps to reproduce, what you expected, what happened, and approximate time/time zone. Redact personal details."></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="feedbackWebsite">Leave this field empty</label><input id="feedbackWebsite" name="website" tabindex="-1" autocomplete="off"></div>
+        <button class="submit" type="submit">Send feedback</button>
+        <p class="status" id="feedbackStatus" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <aside class="panel side">
+      <h3>How testing works</h3>
+      <ul>
+        <li>Submit an application. The team reviews it and follows up by email.</li>
+        <li>Use the official web test or Android tester download link only.</li>
+        <li>Test with a dedicated demo account. Demo balances are simulated, not real money.</li>
+        <li>Report each issue with clear steps and the app version.</li>
+      </ul>
+      <h3>Protect your account</h3>
+      <p>Never send your password, one-time code, transaction PIN, recovery details, access token, bank/card information or private verification URL in a report.</p>
+      <div class="notice"><strong>Important:</strong> OminiPay is still in testing. External payment and payout features are not production-ready. Do not deposit real money or use the tester app for live financial transactions.</div>
+      <div class="links">
+        <a href="https://ominicodes.github.io/OminiPay-Downloads/app/">Open web test ↗</a>
+        <a href="https://github.com/OminiCodes/OminiPay-Downloads/releases">Android tester releases ↗</a>
+        <a href="https://github.com/Omini-Technologies/OminiPay">Project repository ↗</a>
+      </div>
+    </aside>
+  </div>
+</main>
+<footer>© 2026 OminiPay · Official tester portal</footer>
+</div>
+<script>
+(() => {
+  const SUPABASE_URL = "https://mkhzilsggclxrqmtlasd.supabase.co";
+  const PUBLIC_KEY = "sb_publishable_iowO_m6Lel_Mvs-pxDh3WQ_8hwBYJ-0";
+  const endpoint = SUPABASE_URL + "/functions/v1/tester-portal-submit";
+
+  const applyTab = document.getElementById("applyTab");
+  const feedbackTab = document.getElementById("feedbackTab");
+  const applyPanel = document.getElementById("applyPanel");
+  const feedbackPanel = document.getElementById("feedbackPanel");
+
+  function selectTab(which) {
+    const showApply = which === "apply";
+    applyTab.setAttribute("aria-selected", String(showApply));
+    feedbackTab.setAttribute("aria-selected", String(!showApply));
+    applyPanel.hidden = !showApply;
+    feedbackPanel.hidden = showApply;
+    applyPanel.classList.toggle("hidden", !showApply);
+    feedbackPanel.classList.toggle("hidden", showApply);
+  }
+  applyTab.addEventListener("click", () => selectTab("apply"));
+  feedbackTab.addEventListener("click", () => selectTab("feedback"));
+
+  async function submitForm(form, type, status) {
+    const button = form.querySelector("button[type=submit]");
+    const data = new FormData(form);
+    const payload = Object.fromEntries(data.entries());
+    payload.submission_type = type;
+    payload.consent = data.get("consent") === "on";
+    status.textContent = "Sending securely…";
+    status.classList.remove("error");
+    button.disabled = true;
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": PUBLIC_KEY,
+          "Authorization": "Bearer " + PUBLIC_KEY
+        },
+        body: JSON.stringify(payload)
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result.success !== true) {
+        throw new Error(result.error || "We could not submit your form. Please try again.");
+      }
+      status.textContent = result.message || "Thank you. Your submission has been received.";
+      form.reset();
+    } catch (error) {
+      status.textContent = error.message || "Connection problem. Please try again.";
+      status.classList.add("error");
+    } finally {
+      button.disabled = false;
+    }
+  }
+
+  document.getElementById("applicationForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    submitForm(event.currentTarget, "application", document.getElementById("appStatus"));
+  });
+  document.getElementById("feedbackForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    submitForm(event.currentTarget, "feedback", document.getElementById("feedbackStatus"));
+  });
+})();
+</script>
+</body>
+</html>
