@@ -111604,8 +111604,9 @@ i=a==null?"unknown":a
 if(J.c(i,"pin_rejected")){e=J.ch(k,"reason")
 h=e==null?null:J.aM(e)
 if(J.c(h,"pin_not_set"))a0="Set up your transaction PIN in Profile before sending money."
-else a0=J.c(h,"locked")?"Too many incorrect PIN attempts. Try again in 15 minutes.":"Incorrect transaction PIN. Please try again."
-g=a0
+else if(J.c(h,"locked"))a0="Too many incorrect PIN attempts. Try again in 15 minutes."
+else{e=J.c(h,"session_revoked")?"Your sign-in session has expired or was revoked. Sign in again, then retry your transfer.":"Incorrect transaction PIN. Please try again."
+a0=e}g=a0
 e=A.aG(g)
 throw A.f(e)}if(!J.c(i,"posted")){e=A.aG("Transfer returned an unexpected status: "+A.l(i))
 throw A.f(e)}p=10
