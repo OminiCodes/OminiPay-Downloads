@@ -5,15 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#101010">
 <meta name="description" content="Apply to test OminiPay or send feedback to the OminiPay testing team.">
-<title>OminiPay — Tester Portal</title>
+<title>OminiPay 1.0.6 — Tester Portal</title>
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Omini-Technologies/OminiPay/main/assets/images/ominipay_launcher_icon.png">
+<meta name="theme-color" content="#08090B">
 <style>
 :root{color-scheme:dark;--bg:#0b0b0b;--surface:#151515;--surface2:#1c1a16;--line:#393126;--gold:#d8ad52;--gold2:#f0d28a;--text:#f7f4ed;--muted:#aaa49a;--danger:#ff9b91;--success:#b9e6c7}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -18%,#4b391b 0,transparent 46%),linear-gradient(180deg,#111 0%,var(--bg) 70%);color:var(--text);font:15px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -18%,#3B2D12 0,transparent 48%),linear-gradient(180deg,#111318 0%,var(--bg) 72%);color:var(--text);font:15px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
 .wrap{width:min(1040px,calc(100% - 36px));margin:auto}
 header{padding:25px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff12}
 .brand{display:flex;align-items:center;gap:12px;font-size:21px;font-weight:850}
-.mark{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(145deg,#f3d58f,#b9862e);color:#17130b;font-size:24px;font-weight:950}
+.mark{width:43px;height:43px;border-radius:13px;display:block;object-fit:cover;box-shadow:0 7px 28px #e8b43730}
 .brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:650}
 .header-link{color:var(--gold2);text-decoration:none;font-size:13px}
 main{padding:54px 0 72px}
@@ -59,14 +61,14 @@ footer{border-top:1px solid #ffffff12;padding:22px 0 32px;color:#777168;text-ali
 <body>
 <div class="wrap">
 <header>
-  <div class="brand"><div class="mark" aria-hidden="true">O</div><div>OminiPay<small>Simple. Connected. Yours.</small></div></div>
+  <div class="brand"><img class="mark" src="https://raw.githubusercontent.com/Omini-Technologies/OminiPay/main/assets/images/ominipay_launcher_icon.png" alt="OminiPay app icon"><div>OminiPay<small>YOUR MONEY. ACROSS BORDERS.</small></div></div>
   <a class="header-link" href="https://ominicodes.github.io/OminiPay-Downloads/">Download app ↗</a>
 </header>
 <main>
   <section class="hero">
     <div class="eyebrow"><span class="dot"></span> Official tester portal</div>
-    <h1>Help us make OminiPay <span>better.</span></h1>
-    <p>Apply to join the tester group or send feedback about your testing experience. You do not need access to our private GitHub repository.</p>
+    <h1>Test OminiPay <span>1.0.6.</span></h1>
+    <p>Apply to join the tester group or send feedback on Android tester release 1.0.6 (build 8). You do not need access to our private GitHub repository.</p>
     <div class="tabs" role="tablist" aria-label="Tester portal forms">
       <button class="tab" id="applyTab" type="button" role="tab" aria-selected="true" aria-controls="applyPanel">Apply to test</button>
       <button class="tab" id="feedbackTab" type="button" role="tab" aria-selected="false" aria-controls="feedbackPanel">Send feedback</button>
@@ -84,7 +86,7 @@ footer{border-top:1px solid #ffffff12;padding:22px 0 32px;color:#777168;text-ali
           <div><label for="appCountry">Country</label><input id="appCountry" name="country" maxlength="80" autocomplete="country-name" placeholder="e.g. Nigeria"></div>
           <div><label for="appPlatform">Testing platform *</label><select id="appPlatform" name="platform" required><option value="">Select platform</option><option>Android</option><option>iOS</option><option>Web</option></select></div>
           <div><label for="appDevice">Device / browser</label><input id="appDevice" name="device" maxlength="120" placeholder="e.g. Samsung A54, Chrome"></div>
-          <div><label for="appVersion">App version (if installed)</label><input id="appVersion" name="app_version" maxlength="40" placeholder="e.g. 1.0.2"></div>
+          <div><label for="appVersion">App version (if installed)</label><input id="appVersion" name="app_version" maxlength="40" value="1.0.6" placeholder="e.g. 1.0.6"></div>
         </div>
         <div><label for="appDetails">What would you like to help test? *</label><textarea id="appDetails" name="details" minlength="8" maxlength="3000" required placeholder="Tell us briefly about your device, availability, or areas you are interested in testing."></textarea></div>
         <div class="hp" aria-hidden="true"><label for="appWebsite">Leave this field empty</label><input id="appWebsite" name="website" tabindex="-1" autocomplete="off"></div>
@@ -96,15 +98,15 @@ footer{border-top:1px solid #ffffff12;padding:22px 0 32px;color:#777168;text-ali
 
     <section class="panel hidden" id="feedbackPanel" role="tabpanel" aria-labelledby="feedbackTab" hidden>
       <h2>Tester feedback</h2>
-      <p class="lead">Report a bug or tell us what worked well. Please do not include passwords, PINs, OTPs, bank/card details or private verification links.</p>
+      <p class="lead">Report a bug or tell us what worked well. Please do not include passwords, PINs, OTPs, bank/card details or private verification links. Select the 1.0.6 security/sign-in category when reporting these features.</p>
       <form id="feedbackForm">
         <div class="fields">
           <div><label for="feedbackEmail">Email (optional)</label><input id="feedbackEmail" name="email" type="email" maxlength="254" autocomplete="email" placeholder="If you want us to follow up"></div>
           <div><label for="feedbackPlatform">Platform</label><select id="feedbackPlatform" name="platform"><option value="">Select platform</option><option>Android</option><option>iOS</option><option>Web</option></select></div>
           <div><label for="feedbackDevice">Device / browser</label><input id="feedbackDevice" name="device" maxlength="120" placeholder="e.g. iPhone 15, Safari"></div>
-          <div><label for="feedbackVersion">App version</label><input id="feedbackVersion" name="app_version" maxlength="40" placeholder="e.g. 1.0.2"></div>
+          <div><label for="feedbackVersion">App version</label><input id="feedbackVersion" name="app_version" maxlength="40" value="1.0.6" placeholder="e.g. 1.0.6"></div>
         </div>
-        <div><label for="feedbackCategory">Feedback area *</label><select id="feedbackCategory" name="category" required><option value="">Choose an area</option><option>Registration and verification</option><option>Login and account access</option><option>Wallet and currency</option><option>Balance visibility</option><option>Demo funding</option><option>Transfers and history</option><option>Profile and navigation</option><option>Performance or crash</option><option>Suggestion / general feedback</option></select></div>
+        <div><label for="feedbackCategory">Feedback area *</label><select id="feedbackCategory" name="category" required><option value="">Choose an area</option><option>Registration and verification</option><option>Login and account access</option><option>Biometric app lock and password unlock</option><option>Remembered email and passkey sign-in</option><option>Wallet and currency</option><option>Balance visibility</option><option>Demo funding</option><option>Transfers and history</option><option>Profile and navigation</option><option>Performance or crash</option><option>Suggestion / general feedback</option></select></div>
         <div><label for="feedbackDetails">What happened? *</label><textarea id="feedbackDetails" name="details" minlength="8" maxlength="3000" required placeholder="Include steps to reproduce, what you expected, what happened, and approximate time/time zone. Redact personal details."></textarea></div>
         <div class="hp" aria-hidden="true"><label for="feedbackWebsite">Leave this field empty</label><input id="feedbackWebsite" name="website" tabindex="-1" autocomplete="off"></div>
         <button class="submit" type="submit">Send feedback</button>
@@ -113,6 +115,14 @@ footer{border-top:1px solid #ffffff12;padding:22px 0 32px;color:#777168;text-ali
     </section>
 
     <aside class="panel side">
+      <h3>What's new in 1.0.6 (build 8)</h3>
+      <ul>
+        <li>Fingerprint app lock, with account-password verification before enabling protection.</li>
+        <li>Fingerprint verification before disabling protection.</li>
+        <li>Fingerprint unlock after reopening when protection is enabled; account-password unlock when it is disabled.</li>
+        <li>Failed or cancelled verification must keep the app locked and leave the setting unchanged.</li>
+        <li>Remembered email after successful sign-in, with a clear option, plus passkey sign-in on supported devices.</li>
+      </ul>
       <h3>How testing works</h3>
       <ul>
         <li>Submit an application. The team reviews it and follows up by email.</li>
