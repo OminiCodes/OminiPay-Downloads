@@ -1,14 +1,14 @@
-# OminiPay Tester Downloads
+# MAVELYNT Tester Downloads
 
-This public repository hosts signed Android APK releases for OminiPay testers.
+This public repository hosts signed Android APK releases for MAVELYNT testers.
 
 ## Download
 
-1. Open the [latest OminiPay Tester release](https://github.com/OminiCodes/OminiPay-Downloads/releases/latest).
+1. Open the [latest MAVELYNT Tester release](https://github.com/OminiCodes/OminiPay-Downloads/releases/latest).
 2. Download `app-release.apk`.
 3. On Android, open the downloaded APK and follow the installation prompts.
 
-Only install APKs published through this repository. OminiPay's in-app update checker also verifies that update links use this repository's expected release path.
+Only install APKs published through this repository. MAVELYNT's in-app update checker continues to use this repository's existing release path during the rebrand, so current tester links remain stable.
 
 ## Notes
 
